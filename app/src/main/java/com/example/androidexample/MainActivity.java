@@ -2,24 +2,12 @@ package com.example.androidexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Scheduler;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
+import com.example.androidexample.executor.ExecutorActivity;
+import com.example.androidexample.rx.SecondActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,10 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnCall = findViewById(R.id.btn_rx);
+        Button btnRx = findViewById(R.id.btn_rx);
+        Button btnExecutor = findViewById(R.id.btn_executor);
 
-        btnCall.setOnClickListener(view -> {
+        btnRx.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, SecondActivity.class));
+        });
+
+        btnExecutor.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ExecutorActivity.class));
         });
 
     }
