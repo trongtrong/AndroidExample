@@ -29,6 +29,7 @@
         </activity>
         <activity android:name="com.example.androidexample.rx.SecondActivity" />
         <activity android:name="com.example.androidexample.executor.ExecutorActivity" />
+        <activity android:name="com.example.androidexample.video_to_gif.VideoToGifActivity" />
     </application>
 
 </manifest>

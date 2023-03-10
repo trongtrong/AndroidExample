@@ -21,5 +21,11 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"/>
 
+   <Button
+       android:layout_marginTop="50dp"
+       android:text="Video to Gif "
+       android:id="@+id/btn_video_to_gif"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
 
 </LinearLayout>
