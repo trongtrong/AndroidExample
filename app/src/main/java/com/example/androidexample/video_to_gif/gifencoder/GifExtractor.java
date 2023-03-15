@@ -183,6 +183,15 @@ public class GifExtractor {
                                 }
 
                             }
+                            //Sau khi đọc xong dữ liệu bitmap từ buffer đầu ra, ta cần phải đưa buffer
+                            // đó trở lại cho đối tượng MediaCodec bằng cách gọi phương thức releaseOutputBuffer()
+                            // để cho phép đối tượng MediaCodec tiếp tục giải mã các khung hình tiếp theo.
+
+                            //Việc đưa buffer đầu ra trở lại cho MediaCodec bằng phương thức releaseOutputBuffer()
+                            // giúp MediaCodec biết rằng buffer đó đã được xử lý xong và sẵn sàng để sử dụng lại.
+                            // Nếu không đưa buffer đó trở lại, MediaCodec sẽ không biết rằng buffer
+                            // đó đã được sử dụng xong và sẽ không tạo ra buffer mới để sử dụng cho việc xử lý khung hình
+                            // tiếp theo, gây ra lỗi trong việc giải mã video.
                             videoDecoder.releaseOutputBuffer(outIndex, true /* Surface init */);
                             if(time >= endTime){
                                 break;
